@@ -7,12 +7,12 @@
   <meta name="description" content="Все ссылки и контакты в одном месте" />
   <style>
     :root{
-      --bg1:#1a0033;          /* тёмно-фиолетовый */
-      --bg2:#090014;          /* почти чёрный фиолет */
-      --neon-pink:#ff2fb3;    /* неоновый розовый */
-      --neon-purple:#7a3cff; /* неоновый фиолетовый */
-      --neon-blue:#00e5ff;   /* неоновый голубой */
-      --neon-orange:#ff9a00; /* оранжевый акцент */
+      --bg1:#1a0033;
+      --bg2:#090014;
+      --neon-pink:#ff2fb3;
+      --neon-purple:#7a3cff;
+      --neon-blue:#00e5ff;
+      --neon-orange:#ff9a00;
       --card:rgba(255,255,255,.10);
       --stroke:rgba(255,255,255,.18);
       --text:rgba(255,255,255,.95);
@@ -21,74 +21,48 @@
       --radius: 22px;
     }
     *{box-sizing:border-box}
-    body{
-      margin:0;
-      min-height:100svh;
-      color:var(--text);
-      font:16px/1.45 system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
-      background:
+    body{margin:0;min-height:100svh;color:var(--text);font:16px/1.45 system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:
         radial-gradient(800px 500px at 15% 10%, rgba(122,60,255,.45), transparent 60%),
         radial-gradient(700px 500px at 85% 20%, rgba(255,47,179,.45), transparent 60%),
         radial-gradient(600px 400px at 50% 80%, rgba(0,229,255,.35), transparent 65%),
-        linear-gradient(160deg, var(--bg1), var(--bg2));
-      display:flex;
-      justify-content:center;
-      padding:24px 14px 40px;
-    }
+        linear-gradient(160deg, var(--bg1), var(--bg2));display:flex;justify-content:center;padding:24px 14px 40px}
     .wrap{width:100%;max-width:520px}
-    .card{
-      background:var(--card);
-      border:1px solid var(--stroke);
-      box-shadow:var(--shadow);
-      backdrop-filter: blur(12px);
-      border-radius:var(--radius);
-      overflow:hidden;
-    }
+    .card{background:var(--card);border:1px solid var(--stroke);box-shadow:var(--shadow);backdrop-filter: blur(12px);border-radius:var(--radius);overflow:hidden}
     .top{padding:26px 22px 18px;text-align:center}
-    .avatar{
-      width:92px;height:92px;border-radius:50%;border:1px solid var(--stroke);
-      object-fit:cover;display:block;margin:0 auto 14px;
-      box-shadow:0 10px 30px rgba(0,0,0,.25);background:rgba(255,255,255,.08)
-    }
-    h1{margin:0;font-size:22px;letter-spacing:.2px}
+    .avatar{width:92px;height:92px;border-radius:50%;border:1px solid var(--stroke);object-fit:cover;display:block;margin:0 auto 14px;box-shadow:0 10px 30px rgba(0,0,0,.25);background:rgba(255,255,255,.08)}
+    h1{margin:0;font-size:22px}
     .bio{margin:8px auto 0;max-width:420px;color:var(--muted);font-size:14.5px}
     .links{padding:0 16px 16px}
-    .btn{
-      display:flex;align-items:center;gap:12px;width:100%;padding:14px;
-      margin:10px 0;border-radius:16px;border:1px solid var(--stroke);
-      background:rgba(255,255,255,.07);color:var(--text);text-decoration:none;
-      box-shadow: 0 0 0 rgba(0,0,0,0);
-      transition: transform .12s ease, background .2s ease, border-color .2s ease, box-shadow .25s ease
-    }
-    .btn:hover{
-      background:rgba(255,255,255,.12);
-      border-color: var(--neon-pink);
-      box-shadow:
-        0 0 12px rgba(255,47,179,.55),
-        0 0 28px rgba(122,60,255,.45),
-        inset 0 0 12px rgba(255,255,255,.08);
-    }
-    .btn:active{
-      transform:scale(.98);
-      box-shadow:
-        0 0 10px rgba(255,47,179,.45),
-        0 0 20px rgba(0,229,255,.35);
-    }
-    .ico{
-      width:42px;height:42px;border-radius:14px;display:grid;place-items:center;
-      border:1px solid rgba(255,255,255,.22);
-      background:rgba(0,0,0,.18);
-      box-shadow: 0 0 10px rgba(0,229,255,.25);
-    }
+    .btn{display:flex;align-items:center;gap:12px;width:100%;padding:14px;margin:10px 0;border-radius:16px;border:1px solid var(--stroke);background:rgba(255,255,255,.07);color:var(--text);text-decoration:none;transition:.25s}
+    .btn:hover{border-color:var(--neon-pink);box-shadow:0 0 14px rgba(255,47,179,.45)}
+    .ico{width:42px;height:42px;border-radius:14px;display:grid;place-items:center;border:1px solid rgba(255,255,255,.22)}
+    .ico svg{width:22px;height:22px;fill:currentColor}
+
+    /* Оригинальные цвета соцсетей */
+    .btn[href*="t.me"] .ico{color:#27A7E7}
+    .btn[href*="vk.com"] .ico{color:#4C75A3}
+    .btn[href^="tel:"] .ico{color:#34C759}
+    .btn[href*="2gis"] .ico{color:#2BB673}
+    .txt{display:flex;flex-direction:column}
     .label{font-weight:650}
-    .sub{color:var(--muted);font-size:13px;margin-top:2px}
-    .txt{display:flex;flex-direction:column;align-items:flex-start}
-    .social{display:flex;justify-content:center;gap:10px;padding:10px 16px 18px}
-    .sbtn{width:44px;height:44px;border-radius:14px;border:1px solid var(--stroke);
-      background:rgba(255,255,255,.07);display:grid;place-items:center;text-decoration:none}
-    .footer{text-align:center;padding:14px 16px 18px;color:rgba(255,255,255,.55);
-      font-size:12.5px;border-top:1px solid rgba(255,255,255,.10)}
-    svg{width:22px;height:22px;fill:currentColor}
+    .sub{font-size:13px;color:var(--muted)}
+
+    /* SPOILER */
+    details{margin:10px 0;border:1px solid var(--stroke);border-radius:16px;overflow:hidden;background:rgba(255,255,255,.05)}
+    details:hover summary{border-color:var(--neon-purple);box-shadow:0 0 14px rgba(122,60,255,.35)}
+    summary{list-style:none;cursor:pointer;padding:14px;font-weight:700;display:flex;justify-content:space-between;align-items:center;transition:.25s}
+    summary::after{content:'+';font-size:20px;transition:.3s}
+    details[open] summary::after{transform:rotate(45deg)}
+    .spoiler-body{animation:fade .25s ease;padding:10px 0}
+    @keyframes fade{from{opacity:0;transform:translateY(-4px)}to{opacity:1;transform:none}}
+
+    table{width:100%;border-collapse:collapse;font-size:14.5px}
+    th,td{padding:10px 14px}
+    th{text-align:left;background:rgba(255,255,255,.08)}
+    td:last-child,th:last-child{text-align:right}
+    tr:not(:last-child) td{border-bottom:1px solid rgba(255,255,255,.1)}
+
+    .footer{text-align:center;padding:14px 16px 18px;color:rgba(255,255,255,.55);font-size:12.5px;border-top:1px solid rgba(255,255,255,.10)}
   </style>
 </head>
 <body>
@@ -134,40 +108,70 @@
         </a>
       </div>
 
-      <!-- Блок Прайс (таблица) -->
+      <!-- Блок Адрес / 2ГИС -->
+      <div class="links">
+        <div style="text-align:center;margin:6px 0 10px;font-weight:700;letter-spacing:.6px">КАК НАС НАЙТИ</div>
+        <a class="btn" href="https://2gis.ru/tyumen/inside/1830223003805168/firm/70000001090706817?m=65.644263%2C57.177441/19.18" target="_blank" rel="noopener">
+          <span class="ico">📍</span>
+          <span class="txt">
+            <span class="label">Тюмень, Малиновского 5Б</span>
+            <span class="sub">Открыть на карте 2ГИС (с меткой)</span>
+          </span>
+        </a>
+      </div>
+
+      <!-- Блок Прайс -->
       <div class="links">
         <div style="text-align:center;margin:6px 0 10px;font-weight:700;letter-spacing:.6px">ПРАЙС</div>
 
-        <div style="overflow-x:auto;border:1px solid rgba(255,255,255,.14);border-radius:16px;background:rgba(255,255,255,.05)">
-          <table style="width:100%;border-collapse:collapse;font-size:14.5px">
-            <thead>
-              <tr style="background:rgba(255,255,255,.08)">
-                <th style="text-align:left;padding:12px 14px;border-bottom:1px solid rgba(255,255,255,.14)">Услуга</th>
-                <th style="text-align:right;padding:12px 14px;border-bottom:1px solid rgba(255,255,255,.14)">Цена</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td style="padding:12px 14px;border-bottom:1px solid rgba(255,255,255,.10)">
-                  <a href="https://vk.com/retslav_photo" target="_blank" style="color:inherit;text-decoration:none;display:block">Коллаж из ваших фотографий в рамке А3</a>
-                </td>
-                <td style="padding:12px 14px;text-align:right;border-bottom:1px solid rgba(255,255,255,.10)">1150 ₽</td>
-              </tr>
-              <tr>
-                <td style="padding:12px 14px;border-bottom:1px solid rgba(255,255,255,.10)">
-                  <a href="https://vk.com/retslav_photo" target="_blank" style="color:inherit;text-decoration:none;display:block">Кружка с цветной ручкой и дном</a>
-                </td>
-                <td style="padding:12px 14px;text-align:right;border-bottom:1px solid rgba(255,255,255,.10)">685 ₽</td>
-              </tr>
-              <tr>
-                <td style="padding:12px 14px">
-                  <a href="https://vk.com/retslav_photo" target="_blank" style="color:inherit;text-decoration:none;display:block">Фото А4 в рамке</a>
-                </td>
-                <td style="padding:12px 14px;text-align:right">750 ₽</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
+        <details>
+          <summary>Печать визиток — бюджетные</summary>
+          <div class="spoiler-body">
+            <table>
+              <tr><td>50 шт (1 сторона)</td><td>560 ₽</td></tr>
+              <tr><td>100 шт (1 сторона)</td><td>635 ₽</td></tr>
+              <tr><td>200 шт (1 сторона)</td><td>935 ₽</td></tr>
+              <tr><td>300 шт (1 сторона)</td><td>1235 ₽</td></tr>
+              <tr><td>500 шт (1 сторона)</td><td>2135 ₽</td></tr>
+              <tr><td>50 шт (2 стороны)</td><td>635 ₽</td></tr>
+              <tr><td>100 шт (2 стороны)</td><td>750 ₽</td></tr>
+              <tr><td>200 шт (2 стороны)</td><td>1125 ₽</td></tr>
+              <tr><td>300 шт (2 стороны)</td><td>1425 ₽</td></tr>
+              <tr><td>500 шт (2 стороны)</td><td>2360 ₽</td></tr>
+            </table>
+          </div>
+        </details>
+
+        <details>
+          <summary>Печать визиток — мелованные</summary>
+          <div class="spoiler-body">
+            <table>
+              <tr><td>50 шт (1 сторона)</td><td>1010 ₽</td></tr>
+              <tr><td>100 шт (1 сторона)</td><td>1085 ₽</td></tr>
+              <tr><td>200 шт (1 сторона)</td><td>1610 ₽</td></tr>
+              <tr><td>300 шт (1 сторона)</td><td>2135 ₽</td></tr>
+              <tr><td>500 шт (1 сторона)</td><td>3635 ₽</td></tr>
+              <tr><td>50 шт (2 стороны)</td><td>1125 ₽</td></tr>
+              <tr><td>100 шт (2 стороны)</td><td>1275 ₽</td></tr>
+              <tr><td>200 шт (2 стороны)</td><td>1800 ₽</td></tr>
+              <tr><td>300 шт (2 стороны)</td><td>2475 ₽</td></tr>
+              <tr><td>500 шт (2 стороны)</td><td>3975 ₽</td></tr>
+            </table>
+          </div>
+        </details>
+
+        <details>
+          <summary>Дополнительные услуги</summary>
+          <div class="spoiler-body">
+            <table>
+              <tr><td>Пробивка отверстий (50 шт)</td><td>500 ₽</td></tr>
+              <tr><td>Профессиональный дизайн визитки</td><td>1000 ₽</td></tr>
+              <tr><td>Печать на кружках</td><td>от 375 ₽</td></tr>
+              <tr><td>Кружка стандарт</td><td>685 ₽</td></tr>
+              <tr><td>Кружка премиум</td><td>750–875 ₽</td></tr>
+            </table>
+          </div>
+        </details>
       </div>
 
       <!-- Блок Отзывы -->
