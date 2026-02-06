@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Мультиссылка — ваши контакты</title>
+  <meta name="description" content="Все ссылки и контакты в одном месте" />
+  <style>
+    :root{
+      --bg1:#0b1020;
+      --bg2:#0a2a2a;
+      --card:rgba(255,255,255,.08);
+      --stroke:rgba(255,255,255,.14);
+      --text:rgba(255,255,255,.92);
+      --muted:rgba(255,255,255,.72);
+      --shadow: 0 20px 60px rgba(0,0,0,.35);
+      --radius: 22px;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      min-height:100svh;
+      color:var(--text);
+      font:16px/1.45 system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+      background:
+        radial-gradient(900px 600px at 20% 10%, rgba(124,92,255,.35), transparent 55%),
+        radial-gradient(900px 600px at 80% 20%, rgba(18,208,190,.28), transparent 55%),
+        linear-gradient(160deg, var(--bg1), var(--bg2));
+      display:flex;
+      justify-content:center;
+      padding:24px 14px 40px;
+    }
+    .wrap{width:100%;max-width:520px}
+    .card{
+      background:var(--card);
+      border:1px solid var(--stroke);
+      box-shadow:var(--shadow);
+      backdrop-filter: blur(12px);
+      border-radius:var(--radius);
+      overflow:hidden;
+    }
+    .top{padding:26px 22px 18px;text-align:center}
+    .avatar{
+      width:92px;height:92px;border-radius:50%;border:1px solid var(--stroke);
+      object-fit:cover;display:block;margin:0 auto 14px;
+      box-shadow:0 10px 30px rgba(0,0,0,.25);background:rgba(255,255,255,.08)
+    }
+    h1{margin:0;font-size:22px;letter-spacing:.2px}
+    .bio{margin:8px auto 0;max-width:420px;color:var(--muted);font-size:14.5px}
+    .links{padding:0 16px 16px}
+    .btn{
+      display:flex;align-items:center;gap:12px;width:100%;padding:14px;
+      margin:10px 0;border-radius:16px;border:1px solid var(--stroke);
+      background:rgba(255,255,255,.07);color:var(--text);text-decoration:none;
+      transition: transform .08s ease, background .2s ease, border-color .2s ease
+    }
+    .btn:hover{background:rgba(255,255,255,.10);border-color:rgba(255,255,255,.22)}
+    .btn:active{transform:scale(.99)}
+    .ico{width:42px;height:42px;border-radius:14px;display:grid;place-items:center;
+      border:1px solid rgba(255,255,255,.18);background:rgba(0,0,0,.15)}
+    .label{font-weight:650}
+    .sub{color:var(--muted);font-size:13px;margin-top:2px}
+    .txt{display:flex;flex-direction:column;align-items:flex-start}
+    .social{display:flex;justify-content:center;gap:10px;padding:10px 16px 18px}
+    .sbtn{width:44px;height:44px;border-radius:14px;border:1px solid var(--stroke);
+      background:rgba(255,255,255,.07);display:grid;place-items:center;text-decoration:none}
+    .footer{text-align:center;padding:14px 16px 18px;color:rgba(255,255,255,.55);
+      font-size:12.5px;border-top:1px solid rgba(255,255,255,.10)}
+    svg{width:22px;height:22px;fill:currentColor}
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <section class="card">
+      <div class="top">
+        <img class="avatar" src="https://sun9-11.userapi.com/s/v1/ig2/DrybZW0GRqneK-gdQBwUdx7HFgMs0_J7d_v9TOeuH4L7BWUrBhY0bCvhEP5xS75kqGLc8HuJ5UN_ObuC5J0lFEQd.jpg?quality=95&as=32x32,48x48,72x72,108x108,160x160,240x240,360x360,480x480,540x540,640x640,720x720,1024x1024&from=bu&cs=1024x0" alt="Фотоboom" />
+        <h1>Фотоboom | Полиграфия | Фотограф | Тюмень</h1>
+        <p class="bio">Меня зовут Рецлав Анастасия и я фотограф 😉<br><br>Мы вместе с мужем открыли фото центр, в котором осуществляем различные фото услуги, от стандартной печати до различных сувениров.<br><br>Также выезжаем на фотосессии самых различных видов 🔥<br><br>Ждём вас в гости на Малиновского 5Б<br><br>По всем вопросам пишите в сообщения группы ✌🏻<br><br>Также возможна доставка по РФ</p>
+      </div>
+      <div class="links">
+        <!-- Кнопка Telegram -->
+        <a class="btn" href="https://t.me/nassteale" target="_blank">
+          <span class="ico">
+            <svg viewBox="0 0 24 24"><path d="M21.8 4.6c.3-1.2-1-2.2-2.1-1.7L2.8 10.1c-1.2.5-1.2 2.2.1 2.7l4.6 1.7 1.8 5.7c.4 1.2 2 1.5 2.8.5l2.8-3.2 4.8 3.6c1 .7 2.4.1 2.7-1.1L21.8 4.6z"/></svg>
+          </span>
+          <span class="txt">
+            <span class="label">Telegram</span>
+            <span class="sub">Написать в Telegram</span>
+          </span>
+        </a>
+
+        <!-- Кнопка ВК -->
+        <a class="btn" href="https://vk.com/retslav_photo" target="_blank">
+          <span class="ico">
+            <svg viewBox="0 0 24 24"><path d="M12.8 16.8h1.4s.4 0 .6-.2c.2-.2.2-.6.2-.6s0-1.8.8-2.1c.8-.3 1.9 1.7 3 2.5.8.6 1.4.5 1.4.5H22v-1.3s-.9-1.1-1.9-2c-1-1-1.1-.9.3-3 0 0 1.7-2.7 1.5-3-.2-.3-1.1-.2-1.1-.2h-2.4s-.2 0-.4.1c-.2.1-.3.3-.3.3s-.4 1-1 2c-1.2 2.1-1.7 2.2-1.9 2.1-.5-.3-.4-1.4-.4-2.2 0-2.4.4-3.4-.7-3.6-.4-.1-.7-.1-1.8-.1-1.3 0-2.4 0-3 .3-.4.2-.6.6-.5.7.1.1.4 0 .7.3.4.5.4 1.6.4 1.6s.2 2.8-.5 3.1c-.5.2-1.1-.2-2-2.1-.5-1-1-2.1-1-2.1s-.1-.2-.3-.3c-.2-.1-.4-.1-.4-.1H2s-.3 0-.4.2c-.1.2 0 .4 0 .4s1.7 4 3.7 6.8c1.8 2.6 4.4 2.4 4.4 2.4z"/></svg>
+          </span>
+          <span class="txt">
+            <span class="label">ВКонтакте</span>
+            <span class="sub">Написать в VK</span>
+          </span>
+        </a>
+
+        <!-- Кнопка Позвонить -->
+        <a class="btn" href="tel:+79682022770">
+          <span class="ico">
+            <svg viewBox="0 0 24 24"><path d="M6.6 10.8c1.4 2.7 3.9 5.2 6.6 6.6l2.2-2.2c.3-.3.8-.4 1.2-.2 1 .3 2 .5 3.1.5.7 0 1.3.6 1.3 1.3V21c0 .7-.6 1.3-1.3 1.3C9.8 22.3 1.7 14.2 1.7 4.3 1.7 3.6 2.3 3 3 3h3.5c.7 0 1.3.6 1.3 1.3 0 1.1.2 2.1.5 3.1.1.4 0 .9-.3 1.2l-2.4 2.2z"/></svg>
+          </span>
+          <span class="txt">
+            <span class="label">Позвонить</span>
+            <span class="sub">+7 968 202‑27‑70</span>
+          </span>
+        </a>
+      </div>
+
+      <!-- Блок Прайс (таблица) -->
+      <div class="links">
+        <div style="text-align:center;margin:6px 0 10px;font-weight:700;letter-spacing:.6px">ПРАЙС</div>
+
+        <div style="overflow-x:auto;border:1px solid rgba(255,255,255,.14);border-radius:16px;background:rgba(255,255,255,.05)">
+          <table style="width:100%;border-collapse:collapse;font-size:14.5px">
+            <thead>
+              <tr style="background:rgba(255,255,255,.08)">
+                <th style="text-align:left;padding:12px 14px;border-bottom:1px solid rgba(255,255,255,.14)">Услуга</th>
+                <th style="text-align:right;padding:12px 14px;border-bottom:1px solid rgba(255,255,255,.14)">Цена</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td style="padding:12px 14px;border-bottom:1px solid rgba(255,255,255,.10)">
+                  <a href="https://vk.com/market/product/kollazh-iz-vashikh-fotografiy-v-ramke-a3-213753342-12291806" target="_blank" style="color:inherit;text-decoration:none;display:block">Коллаж из ваших фотографий в рамке А3</a>
+                </td>
+                <td style="padding:12px 14px;text-align:right;border-bottom:1px solid rgba(255,255,255,.10)">1150 ₽</td>
+              </tr>
+              <tr>
+                <td style="padding:12px 14px;border-bottom:1px solid rgba(255,255,255,.10)">
+                  <a href="https://vk.com/market/product/kruzhka-s-tsvetnoy-ruchkoy-i-dnom-213753342-12211358" target="_blank" style="color:inherit;text-decoration:none;display:block">Кружка с цветной ручкой и дном</a>
+                </td>
+                <td style="padding:12px 14px;text-align:right;border-bottom:1px solid rgba(255,255,255,.10)">685 ₽</td>
+              </tr>
+              <tr>
+                <td style="padding:12px 14px">
+                  <a href="https://vk.com/market/product/foto-a4-v-ramke-213753342-12215494" target="_blank" style="color:inherit;text-decoration:none;display:block">Фото А4 в рамке</a>
+                </td>
+                <td style="padding:12px 14px;text-align:right">750 ₽</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="footer">© <span id="y"></span></div>
+    </section>
+  </main>
+  <script>document.getElementById('y').textContent=new Date().getFullYear();</script>
+</body>
+</html>
